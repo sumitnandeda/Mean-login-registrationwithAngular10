@@ -1,0 +1,23 @@
+<mat-toolbar color="secondary">
+  <mat-nav-list class="list-horizontal">
+
+    <mat-list-item>
+        <button mat-menu-item routerLink="/auth">Home</button>
+    </mat-list-item>
+
+    <mat-list-item>
+      <button mat-menu-item [matMenuTriggerFor]="claimsmenu">Shop</button>
+    </mat-list-item>
+    <mat-menu #claimsmenu="matMenu" [overlapTrigger]="false">
+        <button mat-menu-item routerLink="/admin">
+          <mat-icon>home</mat-icon>
+          <span>Home appliances</span>
+
+        </button>
+      <button mat-menu-item>
+        <mat-icon>save_alt</mat-icon>
+        <span>Clothing market</span>
+      </button>
+    </mat-menu>
+  </mat-nav-list>
+</mat-toolbar>

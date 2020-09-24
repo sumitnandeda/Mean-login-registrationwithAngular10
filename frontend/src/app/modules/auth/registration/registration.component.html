@@ -1,0 +1,74 @@
+<mat-card class="form-card">
+    <div class="login-form" style="margin-top: -79px;margin-bottom: -88px;">
+      <h4 class="title">CREATE AN ACCOUNT</h4>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()" novalidate>
+      <div class="">
+        <mat-form-field appearance="outline">
+          <mat-label>Username</mat-label>
+          <input matInput placeholder="Username" formControlName="username">
+          <mat-icon matSuffix class="secondary-text">account_circle</mat-icon>
+          <mat-error *ngIf="registerForm.get('username').hasError('required')">
+            Username is required
+        </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="">
+        <mat-form-field appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput formControlName="email">
+            <mat-icon matSuffix class="secondary-text">mail</mat-icon>
+            <mat-error *ngIf="registerForm.get('email').hasError('required')">
+                Email is required
+            </mat-error>
+            <mat-error *ngIf="registerForm.get('email').hasError('email')">
+                Please enter a valid email address
+            </mat-error>
+        </mat-form-field>
+      </div>
+      <div class="">
+        <mat-form-field appearance="outline">
+            <mat-label>Phone No</mat-label>
+            <input matInput formControlName="phone">
+            <mat-icon matSuffix class="secondary-text">phone</mat-icon>
+            <mat-error *ngIf="registerForm.get('phone').hasError('required')">
+                Phone No is required
+            </mat-error>
+            <mat-error *ngIf="registerForm.get('phone').hasError('phone')">
+                Please enter a valid Phone No
+            </mat-error>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label>Password</mat-label>
+          <input matInput type="password" placeholder="Password" formControlName="password">
+          <mat-icon matSuffix class="secondary-text">vpn_key</mat-icon>
+          <mat-error *ngIf="registerForm.get('password').hasError('required')">
+            Password is required
+        </mat-error>
+        </mat-form-field>
+      </div>
+      <div>
+        <mat-form-field appearance="outline">
+            <mat-label>Password (Confirm)</mat-label>
+            <input matInput type="password" formControlName="passwordConfirm">
+            <mat-icon matSuffix class="secondary-text">vpn_key</mat-icon>
+            <mat-error *ngIf="registerForm.get('passwordConfirm').hasError('required')">
+                Password confirmation is required
+            </mat-error>
+            <mat-error *ngIf="!registerForm.get('passwordConfirm').hasError('required') &&
+                               registerForm.get('passwordConfirm').hasError('passwordsNotMatching')">
+                Passwords must match
+            </mat-error>
+        </mat-form-field>
+      </div>
+      <div>
+        <button [disabled]="!registerForm.valid" mat-raised-button color="primary" mat-button>Sign In</button>
+      </div>
+    </form>
+    <div class="register" fxLayout="column" fxLayoutAlign="center center">
+      <span class="text">Already have an account?</span>
+      <a class="link" [routerLink]="'/auth/login'">Login</a>
+    </div>
+    </div>
+    </mat-card>

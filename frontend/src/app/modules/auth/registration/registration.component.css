@@ -1,0 +1,38 @@
+h4, p {
+    font-family: Lato;
+   }
+ 
+ 
+ .login-form {
+   max-width: 445px;
+   margin-left: auto;
+   margin-right: auto;
+   text-align: center;
+   padding: 100px;
+   margin-top: -79px;
+    margin-bottom: -88px;
+ }
+ .login-form .mat-form-field {
+   width: 100%;
+ }
+ 
+ .form-card{
+     margin: 36px 420px 36px 420px;
+ }
+ 
+ .title{
+   
+     font-size: 20px;
+     margin: 0px 0 32px 0;
+ 
+ }
+ 
+ .register {
+  margin: 32px auto 24px auto;
+  font-weight: 600;
+ }
+
+  .text {
+      margin-right: 8px;
+  }
+
